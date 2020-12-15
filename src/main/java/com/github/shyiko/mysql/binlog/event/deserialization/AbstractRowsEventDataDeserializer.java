@@ -202,7 +202,7 @@ public abstract class AbstractRowsEventDataDeserializer<T extends EventData> imp
         }
     }
 
-    protected Serializable deserializeBit(int meta, ByteArrayInputStream inputStream) throws IOException {
+    public Serializable deserializeBit(int meta, ByteArrayInputStream inputStream) throws IOException {
         int bitSetLength = (meta >> 8) * 8 + (meta & 0xFF);
         return inputStream.readBitSet(bitSetLength, false);
     }
